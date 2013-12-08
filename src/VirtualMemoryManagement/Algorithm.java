@@ -9,6 +9,7 @@ public class Algorithm {
 	protected int [] pages;
 	protected int [] page_counts;
 	protected String algorithm;
+	protected int num_of_frames;
 	protected ArrayList<Integer> unique_pages = new ArrayList<Integer>();
 	
 	public String getStats(Algorithm algorithm){

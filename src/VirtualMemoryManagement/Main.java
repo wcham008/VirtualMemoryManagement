@@ -1,6 +1,7 @@
 package VirtualMemoryManagement;
 
 import java.io.*;
+import java.util.ArrayList;
 
 public class Main {
 
@@ -67,6 +68,7 @@ public class Main {
 		FileReader file = new FileReader("/home/dean/workspace/VirtualMemoryManagement/testfile.dat");
 		BufferedReader reader = new BufferedReader(file);
 		String address = reader.readLine();
+		ArrayList<String> address_list = new ArrayList<String>();
 		
 		//RUN EACH ALGORITHM WITH EACH ADDRESS
 		while (address != null)
@@ -78,98 +80,99 @@ public class Main {
 				p512f4fifo.lookupPage(address);
 				p512f4lru.lookupPage(address);
 				p512f4mru.lookupPage(address);
-				p512f4optimal.lookupPage(address);
 				
 				p512f8fifo.lookupPage(address);
 				p512f8lru.lookupPage(address);
 				p512f8mru.lookupPage(address);
-				p512f8optimal.lookupPage(address);
 				
 				p512f12fifo.lookupPage(address);
 				p512f12lru.lookupPage(address);
 				p512f12mru.lookupPage(address);
-				p512f12optimal.lookupPage(address);
 				
 				p1024f4fifo.lookupPage(address);
 				p1024f4lru.lookupPage(address);
 				p1024f4mru.lookupPage(address);
-				p1024f4optimal.lookupPage(address);
 				
 				p1024f8fifo.lookupPage(address);
 				p1024f8lru.lookupPage(address);
 				p1024f8mru.lookupPage(address);
-				p1024f8optimal.lookupPage(address);
 				
 				p1024f12fifo.lookupPage(address);
 				p1024f12lru.lookupPage(address);
 				p1024f12mru.lookupPage(address);
-				p1024f12optimal.lookupPage(address);
 				
 				p2048f4fifo.lookupPage(address);
 				p2048f4lru.lookupPage(address);
 				p2048f4mru.lookupPage(address);
-				p2048f4optimal.lookupPage(address);
 				
 				p2048f8fifo.lookupPage(address);
 				p2048f8lru.lookupPage(address);
 				p2048f8mru.lookupPage(address);
-				p2048f8optimal.lookupPage(address);
 				
 				p2048f12fifo.lookupPage(address);
 				p2048f12lru.lookupPage(address);
 				p2048f12mru.lookupPage(address);
-				p2048f12optimal.lookupPage(address);
 				
 			}
-			
+			address_list.add(address);
 			address = reader.readLine();
 		}
+		
+		/*p512f4optimal.lookupPage(address_list);
+		p512f8optimal.lookupPage(address_list);
+		p512f12optimal.lookupPage(address_list);
+		p1024f4optimal.lookupPage(address_list);
+		p1024f8optimal.lookupPage(address_list);
+		p1024f12optimal.lookupPage(address_list);
+		p2048f4optimal.lookupPage(address_list);
+		p2048f8optimal.lookupPage(address_list);
+		p2048f12optimal.lookupPage(address_list);*/
 		
 		//PRINT OUT THE STATS FOR EACH RUN
 		System.out.println(p512f4fifo.getStats(p512f4fifo));
 		System.out.println(p512f4lru.getStats(p512f4lru));
 		System.out.println(p512f4mru.getStats(p512f4mru));
-		System.out.println(p512f4optimal.getStats(p512f4optimal));
+		//System.out.println(p512f4optimal.getStats(p512f4optimal));
 		
 		System.out.println(p512f8fifo.getStats(p512f8fifo));
 		System.out.println(p512f8lru.getStats(p512f8lru));
 		System.out.println(p512f8mru.getStats(p512f8mru));
-		System.out.println(p512f8optimal.getStats(p512f8optimal));
+		//System.out.println(p512f8optimal.getStats(p512f8optimal));
 		
 		System.out.println(p512f12fifo.getStats(p512f12fifo));
 		System.out.println(p512f12lru.getStats(p512f12lru));
 		System.out.println(p512f12mru.getStats(p512f12mru));
-		System.out.println(p512f12optimal.getStats(p512f12optimal));
+		//System.out.println(p512f12optimal.getStats(p512f12optimal));
 		
 		System.out.println(p1024f4fifo.getStats(p1024f4fifo));
 		System.out.println(p1024f4lru.getStats(p1024f4lru));
 		System.out.println(p1024f4mru.getStats(p1024f4mru));
-		System.out.println(p1024f4optimal.getStats(p1024f4optimal));
+		//System.out.println(p1024f4optimal.getStats(p1024f4optimal));
 		
 		System.out.println(p1024f8fifo.getStats(p1024f8fifo));
 		System.out.println(p1024f8lru.getStats(p1024f8lru));
 		System.out.println(p1024f8mru.getStats(p1024f8mru));
-		System.out.println(p1024f8optimal.getStats(p1024f8optimal));
+		//System.out.println(p1024f8optimal.getStats(p1024f8optimal));
 		
 		System.out.println(p1024f12fifo.getStats(p1024f12fifo));
 		System.out.println(p1024f12lru.getStats(p1024f12lru));
 		System.out.println(p1024f12mru.getStats(p1024f12mru));
-		System.out.println(p1024f12optimal.getStats(p1024f12optimal));
+		//System.out.println(p1024f12optimal.getStats(p1024f12optimal));
 		
 		System.out.println(p2048f4fifo.getStats(p2048f4fifo));
 		System.out.println(p2048f4lru.getStats(p2048f4lru));
 		System.out.println(p2048f4mru.getStats(p2048f4mru));
-		System.out.println(p2048f4optimal.getStats(p2048f4optimal));
+		//System.out.println(p2048f4optimal.getStats(p2048f4optimal));
 		
 		System.out.println(p2048f8fifo.getStats(p2048f8fifo));
 		System.out.println(p2048f8lru.getStats(p2048f8lru));
 		System.out.println(p2048f8mru.getStats(p2048f8mru));
-		System.out.println(p2048f8optimal.getStats(p2048f8optimal));
+		//System.out.println(p2048f8optimal.getStats(p2048f8optimal));
 		
 		System.out.println(p2048f12fifo.getStats(p2048f12fifo));
 		System.out.println(p2048f12lru.getStats(p2048f12lru));
 		System.out.println(p2048f12mru.getStats(p2048f12mru));
-		System.out.println(p2048f12optimal.getStats(p2048f12optimal));
+		//System.out.println(p2048f12optimal.getStats(p2048f12optimal));
 	}
 
 }

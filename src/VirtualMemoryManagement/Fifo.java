@@ -10,6 +10,7 @@ public class Fifo extends Algorithm{
 		this.pages = new int [num_frames];
 		this.page_counts = new int [num_frames];
 		this.algorithm = algorithm;
+		this.num_of_frames  = num_frames;
 	}
 	
 	public void lookupPage(String address){
