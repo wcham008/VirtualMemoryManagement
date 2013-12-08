@@ -1,7 +1,7 @@
 package VirtualMemoryManagement;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+//import java.util.Arrays;
 
 public class Optimal extends Algorithm{
 	
@@ -14,7 +14,7 @@ public class Optimal extends Algorithm{
 	}
 	
 	public void lookupPage(ArrayList <String> address_list){
-		for(String address : address_list){
+		/*for(String address : address_list){
 		
 			this.num_of_addresses++;
 			
@@ -56,6 +56,6 @@ public class Optimal extends Algorithm{
 				this.pages[pos] = pn;
 			
 			}
-		}
+		}*/
 	}
 }
